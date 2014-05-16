@@ -1,0 +1,18 @@
+
+server {
+
+    listen <%= @entry[ :port ] %>;
+    server_name <%= @entry[ :name ] %>;
+
+    <% @entry[ :locations ].each do |location| -%>
+    location <%= location[ :name ] %> {
+        <% location[ :attrs ].each do |row| -%>
+            <% row.each do |col| -%><%= col %> <% end -%>;
+        <% end -%>
+    }
+    <% end -%>
+
+    <% @entry[ :attrs ].each do |row| -%>
+    <% row.each do |col| -%><%= col %> <% end -%>;
+    <% end -%>
+}

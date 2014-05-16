@@ -1,0 +1,7 @@
+
+upstream <%= @name %> {
+
+    <% @nodes.each do |row| -%>
+        <% row.each do |col| -%><%= col %> <% end -%>;
+    <% end -%>
+}
